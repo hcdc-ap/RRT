@@ -30,10 +30,10 @@
     src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec">
   </iframe>
   <script>
-    // Lắng nghe tin nhắn từ iframe
+    // Listen for messages from the iframe
     window.addEventListener('message', function(event) {
-      // Kiểm tra nguồn gốc của tin nhắn để đảm bảo an toàn
-      if (event.origin === 'https://script.google.com') {
+      // Check if the message is from a Google Apps Script domain
+      if (event.origin.includes('google.com') || event.origin.includes('googleusercontent.com')) {
         const data = event.data;
         if (data && data.action === 'redirect' && data.url) {
           window.location.href = data.url;
@@ -42,8 +42,6 @@
     });
 
     var iframe = document.getElementById("myiframe");
-    // iframe.width = iframe.contentWindow.document.body.scrollWidth;
-    // iframe.height = iframe.contentWindow.document.body.scrollHeight;
   </script>
 </body>
 </html>
