@@ -12,23 +12,32 @@
     
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
-
+    
     <link rel="manifest" href="manifest.json">
 
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0d6efd; }
+        body, html { 
+            margin: 0; padding: 0; 
+            height: 100%; width: 100%; 
+            overflow: hidden; /* Chặn cuộn trang mẹ */
+            background: #0d6efd; 
+        }
         iframe {
             border: none;
             width: 100%;
             height: 100%;
             display: block;
-            /* Mẹo nhỏ: Dịch iframe lên trên để che thanh thông báo GAS */
-            /* Lưu ý: Cách này có thể che mất 1 phần header nếu không chỉnh lại CSS trong GAS */
-            /* position: absolute; top: -25px; height: calc(100% + 25px); */
+            /* Mẹo: Nếu muốn che thanh banner GAS, có thể dùng:
+               height: calc(100% + 25px); 
+               margin-top: -25px; 
+            */
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec"></iframe>
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec"
+        allow="geolocation; microphone; camera; fullscreen"
+    ></iframe>
 </body>
 </html>
