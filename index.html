@@ -1,46 +1,34 @@
 <!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<html lang="vi">
 <head>
-  <title>RRT_HCDC</title>
-  <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/Tw2CN2k/img-8-8-png-crop1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HCDC RRT System</title>
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0d6efd">
+    
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" nonce="">
+    <link rel="manifest" href="manifest.json">
 
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0px;
-      padding: 0px;
-      border: none;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0px;
-      padding: 0px;
-      border: none;
-    }
-  </style>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0d6efd; }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+            /* Mẹo nhỏ: Dịch iframe lên trên để che thanh thông báo GAS */
+            /* Lưu ý: Cách này có thể che mất 1 phần header nếu không chỉnh lại CSS trong GAS */
+            /* position: absolute; top: -25px; height: calc(100% + 25px); */
+        }
+    </style>
 </head>
-
 <body>
-  <iframe 
-  id="myiframe" 
-  allow="fullscreen; web-share; autoplay; camera; encrypted-media; geolocation; microphone; midi; payment; usb; accelerometer; gyroscope; magnetometer; screen-wake-lock; clipboard-read; clipboard-write" 
-  src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec">
-</iframe>
-  <script>
-    var iframe = document.getElementById("myiframe");
-    iframe.width = iframe.contentWindow.document.body.scrollWidth;
-    iframe.height = iframe.contentWindow.document.body.scrollHeight;
-  </script>
+    <iframe src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec"></iframe>
 </body>
-
 </html>
