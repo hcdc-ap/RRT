@@ -7,7 +7,8 @@
     
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0d6efd">
     
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
@@ -15,7 +16,6 @@
     <link rel="manifest" href="manifest.json">
 
     <style>
-        /* CSS để Full màn hình và ẩn thanh cuộn thừa */
         body, html { 
             margin: 0; padding: 0; 
             height: 100%; width: 100%; 
@@ -25,7 +25,9 @@
         iframe {
             border: none;
             width: 100vw;
-            height: 100vh;
+            /* Ẩn banner bằng cách trừ đi ~50px (chiều cao banner thường 44-50px) */
+            height: calc(100vh + 50px);  /* Tăng chiều cao iframe */
+            margin-top: -50px;           /* Đẩy lên để banner bị ẩn phía trên */
             display: block;
         }
     </style>
