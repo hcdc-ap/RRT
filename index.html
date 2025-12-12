@@ -8,19 +8,20 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#f5f5f5"> <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
+    <meta name="theme-color" content="#ffffff"> <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
     <link rel="manifest" href="manifest.json">
 
     <style>
-        /* 1. Reset Margin/Padding */
+        /* 1. Reset & Đặt nền TRẮNG */
         body, html { 
             margin: 0; 
             padding: 0; 
             height: 100%; 
             width: 100%; 
             overflow: hidden; /* Cấm cuộn ở trang mẹ */
-            background-color: #f5f5f5; /* QUAN TRỌNG: Đổi màu nền thành màu của App (Xám/Trắng), đừng để màu xanh */
+            /* 👇👇👇 QUAN TRỌNG: Đổi màu xanh thành màu TRẮNG 👇👇👇 */
+            background-color: #ffffff; 
         }
 
         /* 2. Cấu hình Iframe Full màn hình + Hack ẩn Banner Google */
@@ -40,10 +41,9 @@
             /* Kéo iframe lên trên 25px */
             top: -25px; 
             
-            /* Tăng chiều cao thêm 25px để bù lại phần bị kéo lên */
-            /* Sử dụng 100dvh (Dynamic Viewport Height) để fix lỗi trên iOS/Android khi thanh địa chỉ co giãn */
-            height: calc(100vh + 25px);       /* Fallback cho trình duyệt cũ */
-            height: calc(100dvh + 25px);      /* Chuẩn cho mobile hiện đại */
+            /* Tăng chiều cao bù trừ. Tăng hẳn lên +50px cho chắc chắn phủ kín */
+            height: calc(100vh + 50px);       /* Fallback */
+            height: calc(100dvh + 50px);      /* Chuẩn cho mobile hiện đại */
         }
     </style>
 </head>
