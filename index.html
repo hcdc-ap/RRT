@@ -2,35 +2,48 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>HCDC RRT System</title>
     
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#0d6efd">
-    
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
+    <meta name="theme-color" content="#f5f5f5"> <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png">
-    
     <link rel="manifest" href="manifest.json">
 
     <style>
+        /* 1. Reset Margin/Padding */
         body, html { 
-            margin: 0; padding: 0; 
-            height: 100%; width: 100%; 
-            overflow: hidden; /* Chặn cuộn trang mẹ */
-            background: #0d6efd; 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            overflow: hidden; /* Cấm cuộn ở trang mẹ */
+            background-color: #f5f5f5; /* QUAN TRỌNG: Đổi màu nền thành màu của App (Xám/Trắng), đừng để màu xanh */
         }
+
+        /* 2. Cấu hình Iframe Full màn hình + Hack ẩn Banner Google */
         iframe {
             border: none;
-            width: 100%;
-            height: 100%;
             display: block;
+            width: 100%;
             
-               height: calc(100% + 25px); 
-               margin-top: -25px; 
-           
+            /* Dùng position fixed để ghim chặt vào màn hình */
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            /* KỸ THUẬT ẨN BANNER "This app was created by..." */
+            /* Kéo iframe lên trên 25px */
+            top: -25px; 
+            
+            /* Tăng chiều cao thêm 25px để bù lại phần bị kéo lên */
+            /* Sử dụng 100dvh (Dynamic Viewport Height) để fix lỗi trên iOS/Android khi thanh địa chỉ co giãn */
+            height: calc(100vh + 25px);       /* Fallback cho trình duyệt cũ */
+            height: calc(100dvh + 25px);      /* Chuẩn cho mobile hiện đại */
         }
     </style>
 </head>
