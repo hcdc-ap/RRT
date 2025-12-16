@@ -7,46 +7,26 @@
     
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#ffffff"> 
+    
     <link rel="icon" type="image/png" href="https://i.ibb.co/gMXyB8xF/emergency.png">
     <link rel="apple-touch-icon" href="https://i.ibb.co/gMXyB8xF/emergency.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
 
     <style>
-        /* 1. Reset & Đặt nền TRẮNG */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            width: 100%; 
-            overflow: hidden; /* Cấm cuộn ở trang mẹ */
-            background-color: #ffffff; 
-        }
-
-        /* 2. Cấu hình Iframe Full màn hình */
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #ffffff; }
         iframe {
-            border: none;
-            display: block;
-            width: 100%;
-            
-            /* Dùng position fixed để ghim chặt vào màn hình */
-            position: fixed; 
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-                      
-            /* Chiều cao chuẩn màn hình */
-            height: 100vh;        
-            height: 100dvh;
+            border: none; display: block; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            height: 100vh; height: 100dvh; 
         } 
     </style>
 </head>
 <body>
     <iframe 
         src="https://script.google.com/macros/s/AKfycbwr4fWYm8uGjGDatIMi5URoyE28M4cuY2vFCCAShG6RpdroXUMbIaq1WwX2XIF9WEzI/exec"
-        allow="geolocation; microphone; camera; fullscreen"
+        allow="geolocation; microphone; camera; fullscreen; clipboard-read; clipboard-write; web-share; screen-wake-lock; accelerometer; gyroscope; magnetometer; payment; usb; autoplay; encrypted-media; midi"
     ></iframe>
 </body>
 </html>
